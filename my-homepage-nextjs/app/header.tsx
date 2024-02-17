@@ -10,16 +10,16 @@ export function Header(){
 			</div>
 	  		<nav className={`${styles.navbar} ${font_opensans.className}`}>
 			  		<div className={styles.navbutton}>
-						<Link className={styles.Link} href="/">About</Link>
+						<Link className={styles.Link} href="/about">About</Link>
 					</div>
 					<div className={styles.navbutton}>
 						<Link className={styles.Link} href="/">Blog</Link>
 					</div>
 					<div className={styles.navbutton}>
-						<Link className={styles.Link} href="/">WebTools</Link>
+						<Link className={styles.Link} href="/webtools">WebTools</Link>
 					</div>
 					<div className={styles.navbutton}>
-						<Link className={styles.Link} href="/">Contact</Link>
+						<Link className={styles.Link} href="/contact">Contact</Link>
 					</div>
 				
 			</nav>

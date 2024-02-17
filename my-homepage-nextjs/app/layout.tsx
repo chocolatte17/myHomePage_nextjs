@@ -1,5 +1,6 @@
 import {Header} from './header';
 import {Footer} from './footer';
+import Template from './template';
 
 export const metadata = {
   title: 'Next.js',
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        {children}
+        <Template>{children}</Template>
 	<Footer />
       </body>
     </html>

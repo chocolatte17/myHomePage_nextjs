@@ -1,0 +1,43 @@
+.header{
+	height: auto;
+	margin: 15px;
+	padding: 15px;
+	border-radius: 15px;
+	
+	background-color: var(--primary-accent-color);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space;
+}
+
+.navbar{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: flex-end;
+	font-style: normal;
+	font-weight: 300;
+}
+
+.navbutton{
+	flex: none;
+	font-size: 18px;
+	margin-right: 48px;
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.navTop{
+	font-size: 24px;	
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.Link {
+	color: var(--on-primary-accent-color);
+	text-decoration: none;
+}
+

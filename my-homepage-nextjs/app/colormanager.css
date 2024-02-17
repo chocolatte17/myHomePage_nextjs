@@ -1,0 +1,25 @@
+:root {
+    --surface-color: #fff5f7;
+    
+    --primary-accent-color: #666263;
+    --on-primary-accent-color: #fff5f7;
+    /*--primary-container-color: */
+    /*--on-primary-container-color: */
+    
+    /*--secondary-accent-color: */
+    /*--on-secondary-accent-color: */
+    --secondary-container-color: #e6e4dc;
+    /*--on-secondary-contaner-color: */
+
+    --error-color: #e6002e;
+    --on-error-color:
+
+
+    /*
+        *-accent-color: 前景要素を強調するために使用されるアクセントカラー
+        *-container-color: ボタンなどの前景要素の塗りつぶし色
+        on-*: ペアになる色の上にあるテキストやアイコンなどの色を規定
+
+        全体的にMaterialDesign3を参考に作成
+    */
+}

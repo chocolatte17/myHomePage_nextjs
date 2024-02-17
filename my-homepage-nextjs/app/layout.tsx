@@ -1,8 +1,10 @@
 import {Header} from './header';
 import {Footer} from './footer';
+import { font_opensans } from './_utils/font';
+
 import './global.css';
 
-import Template from './template';
+
 
 export const metadata = {
   title: 'Next.js',
@@ -17,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>
+      <body className={font_opensans.className}>
         <Header />
         <div className='article'>
           {children}
@@ -25,5 +27,5 @@ export default function RootLayout({
 	      <Footer />
       </body>
     </html>
-  )
+  );
 }

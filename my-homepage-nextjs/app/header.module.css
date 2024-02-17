@@ -5,6 +5,10 @@
 	border-radius: 15px;
 	
 	background-color: #666263;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space;
 }
 
 .navbar{
@@ -12,15 +16,24 @@
 	width: 100%;
 	flex-direction: row;
 	justify-content: flex-end;
+	font-style: normal;
+	font-weight: 300;
 }
 
 .navbutton{
 	flex: none;
 	font-size: 24px;
 	margin-right: 48px;
+	text-align: center;
+
+}
+
+.navTop{
+	font-size: 28px;	
 }
 
 .Link {
 	color: #fff5f7;
 	text-decoration: none;
 }
+

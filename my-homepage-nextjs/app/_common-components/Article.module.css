@@ -1,0 +1,46 @@
+/*記事系の共通レイアウト*/
+.article{
+	width: 82vw;
+	min-height: 90vh;
+	margin-top: 32px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 24px;
+    padding-left: 32px;
+	border-radius: 16px;
+	background-color: var(--surface-color);
+	font-weight: 400;
+}
+
+/*about, contact等のユニバーサルに使えるレイアウトの差分*/
+.universal_layout{
+    text-align: center;
+}
+
+.universal_layout > h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    color: #333131;
+}
+.universal_layout > h1:before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    display: inline-block;
+    width: 60px;
+    height: 5px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #333131;
+    border-radius: 2px;
+  }
+.universal_layout > div{
+    text-align: left;
+    color: #333131;
+}
+
+/*ブログ各記事ページのレイアウトの差分*/
+
+/*ブログ記事の一覧ページのレイアウト差分*/

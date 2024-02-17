@@ -6,6 +6,6 @@
 	margin-left: auto;
 	padding: 16px;
 	border-radius: 16px;
-	background-color: #fff5f7;
+	background-color: var(--surface-color);
 	font-weight: 400;
 }

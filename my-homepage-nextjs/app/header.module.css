@@ -4,7 +4,7 @@
 	padding: 15px;
 	border-radius: 15px;
 	
-	background-color: #666263;
+	background-color: var(--primary-accent-color);
 
 	display: flex;
 	flex-direction: row;
@@ -37,7 +37,7 @@
 }
 
 .Link {
-	color: #fff5f7;
+	color: var(--on-primary-accent-color);
 	text-decoration: none;
 }
 

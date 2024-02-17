@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-	title: 'TOP',
+	title: 'Chocolatte\'s site/Home',
 }
 
 export default function Page(){

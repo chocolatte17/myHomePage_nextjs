@@ -1,0 +1,11 @@
+.article{
+	width: 82vw;
+	min-height: 90vh;
+	margin-top: 32px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 16px;
+	border-radius: 16px;
+	background-color: #fff5f7;
+	font-weight: 400;
+}

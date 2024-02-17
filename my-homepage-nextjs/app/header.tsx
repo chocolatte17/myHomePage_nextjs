@@ -9,6 +9,9 @@ export function Header(){
 				<Link className={styles.Link} href="/">[ChocolatteLogo]</Link>
 			</div>
 	  		<nav className={`${styles.navbar} ${font_opensans.className}`}>
+			  		<div className={styles.navbutton}>
+						<Link className={styles.Link} href="/">About</Link>
+					</div>
 					<div className={styles.navbutton}>
 						<Link className={styles.Link} href="/">Blog</Link>
 					</div>

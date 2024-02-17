@@ -21,9 +21,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={font_opensans.className}>
         <Header />
-        <div className='article'>
           {children}
-        </div>
 	      <Footer />
       </body>
     </html>

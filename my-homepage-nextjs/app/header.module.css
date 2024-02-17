@@ -22,14 +22,18 @@
 
 .navbutton{
 	flex: none;
-	font-size: 24px;
+	font-size: 18px;
 	margin-right: 48px;
 	text-align: center;
-
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .navTop{
-	font-size: 28px;	
+	font-size: 24px;	
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .Link {

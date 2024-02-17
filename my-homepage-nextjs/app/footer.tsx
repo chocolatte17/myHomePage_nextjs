@@ -1,7 +1,10 @@
+import styles from './footer.module.css';
+
 export function Footer(){
   return (
-    <div>
-      <h3>This is footer.</h3>
+    <div className={styles.footer}>
+      <h4>Chocolatte's site.</h4>
+      <p>chocolatte all right reserved.</p>
     </div>
   );
 }

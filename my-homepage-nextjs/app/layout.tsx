@@ -1,5 +1,7 @@
 import {Header} from './header';
 import {Footer} from './footer';
+import './global.css';
+
 import Template from './template';
 
 export const metadata = {
@@ -17,8 +19,10 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        <Template>{children}</Template>
-	<Footer />
+        <div className='article'>
+          {children}
+        </div>
+	      <Footer />
       </body>
     </html>
   )

@@ -1,0 +1,14 @@
+body{
+	background-color: #e6e4dc
+}
+
+.article{
+	width: 82vw;
+	margin-top: 32px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 16px;
+	border-radius: 8px;
+
+	background-color: #fff5f7;
+}

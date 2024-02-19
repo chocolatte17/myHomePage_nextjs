@@ -1,10 +1,10 @@
 :root {
     --surface-color: #fff5f7;
     
-    --primary-accent-color: #666263;
-    --on-primary-accent-color: #fff5f7;
-    /*--primary-container-color: */
-    /*--on-primary-container-color: */
+    --primary-accent-color: #333131;
+    /*--on-primary-accent-color: #fff5f7;*/
+    --primary-container-color: #666263;
+    --on-primary-container-color: #fff5f7;
     
     /*--secondary-accent-color: */
     /*--on-secondary-accent-color: */

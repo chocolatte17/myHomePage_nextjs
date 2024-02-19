@@ -4,7 +4,7 @@
 	padding: 15px;
 	border-radius: 15px;
 	
-	background-color: var(--primary-accent-color);
+	background-color: var(--primary-container-color);
 
 	display: flex;
 	flex-direction: row;
@@ -43,7 +43,7 @@
 
 
 .navbutton:hover::after{
-	background-color: var(--on-primary-accent-color);
+	background-color: var(--on-primary-container-color);
 	transform: scale(1,1);
 }
 
@@ -56,6 +56,6 @@
 }
 
 .Link {
-	color: var(--on-primary-accent-color);
+	color: var(--on-primary-container-color);
 	text-decoration: none;
 }

@@ -20,11 +20,15 @@ export function UniversalLayout({title, children}: {title: string, children: Rea
 }
 
 //ブログ各記事のレイアウト
-export function BlogLayout(){
-
-}
-
-//ブログ一覧のレイアウト
-export function ArticleListLayout(){
-
+export function BlogLayout({title, children}: {title: string, children: React.ReactNode}){
+	return (
+		<>
+			<div className={styles.article}>
+				<div className={styles.blog_layout}>
+					<h1>{title}</h1>
+					<div>{children}</div>
+				</div>
+			</div>
+		</>
+	);
 }

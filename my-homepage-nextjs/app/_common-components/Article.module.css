@@ -22,6 +22,7 @@
     display: inline-block;
     margin-bottom: 1em;
     color: #333131;
+    margin-top: 16px;
 }
 .universal_layout > h1:before {
     content: '';
@@ -37,10 +38,9 @@
     border-radius: 2px;
   }
 .universal_layout > div{
+    margin-top: 46px;
+    padding-right: 32px;
+    padding-left: 32px;
     text-align: left;
     color: #333131;
 }
-
-/*ブログ各記事ページのレイアウトの差分*/
-
-/*ブログ記事の一覧ページのレイアウト差分*/

@@ -21,7 +21,7 @@
     position: relative;
     display: inline-block;
     margin-bottom: 1em;
-    color: #333131;
+    color: var(--primary-accent-color);
     margin-top: 16px;
 }
 .universal_layout > h1:before {
@@ -34,7 +34,7 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    background-color: #333131;
+    background-color: var(--primary-accent-color);
     border-radius: 2px;
   }
 .universal_layout > div{
@@ -42,5 +42,5 @@
     padding-right: 32px;
     padding-left: 32px;
     text-align: left;
-    color: #333131;
+    color: var(--primary-accent-color);
 }

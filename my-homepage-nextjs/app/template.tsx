@@ -19,6 +19,7 @@ export function UniversalLayout({title, children}: {title: string, children: Rea
 	);
 }
 
+/*
 //ブログ各記事のレイアウト
 export function BlogLayout({title, children}: {title: string, children: React.ReactNode}){
 	return (
@@ -32,3 +33,4 @@ export function BlogLayout({title, children}: {title: string, children: React.Re
 		</>
 	);
 }
+*/

@@ -20,7 +20,7 @@
 .universal_layout > h1 {
     position: relative;
     display: inline-block;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     color: var(--primary-accent-color);
     margin-top: 16px;
 }
@@ -43,4 +43,12 @@
     padding-left: 32px;
     text-align: left;
     color: var(--primary-accent-color);
+}
+
+.blog_layout{
+    padding-left: 0px;
+}
+
+.blog_layout > ul {
+    margin-left: 0px;
 }

@@ -1,6 +1,12 @@
 :root {
     --surface-color: #fff5f7;
     
+    --surface-container-low-color: #fbf1f3;
+    --surface-container-color:#ece6e6;
+    --surface-container-high-color: #ccc4c5;
+
+    /*--on-surface-container:*/
+
     --primary-accent-color: #333131;
     /*--on-primary-accent-color: #fff5f7;*/
     --primary-container-color: #666263;
@@ -19,6 +25,10 @@
         *-accent-color: 前景要素を強調するために使用されるアクセントカラー
         *-container-color: ボタンなどの前景要素の塗りつぶし色
         on-*: ペアになる色の上にあるテキストやアイコンなどの色を規定
+
+        *-low-color: 低強調用
+        *-color: 中強調用
+        *-high-color:　強強調用
 
         全体的にMaterialDesign3を参考に作成
     */

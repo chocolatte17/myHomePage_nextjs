@@ -13,7 +13,7 @@ export function Header(){
 						<Link className={styles.Link} href="/about">About</Link>
 					</div>
 					<div className={styles.navbutton}>
-						<Link className={styles.Link} href="/">Blog</Link>
+						<Link className={styles.Link} href="/blog">Blog</Link>
 					</div>
 					<div className={styles.navbutton}>
 						<Link className={styles.Link} href="/webtools">WebTools</Link>

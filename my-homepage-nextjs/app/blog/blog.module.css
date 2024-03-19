@@ -1,0 +1,85 @@
+/*幅が1160px以上の場合*/
+@media (min-width: 1160px) {
+    .articleCard{
+        width: 820px;
+        max-height: 223px;
+    }
+
+}
+
+/*幅が820px以上1160px未満*/
+@media (min-width: 820px) and (max-width: 1160px){
+    .articleCard{
+        width: 740px;
+        max-height: 240px;
+    }
+}
+
+.bloglist{
+    width: fit-content;
+    padding-left: 8%;
+}
+
+.li {
+    list-style: none;
+
+}
+
+.Link {
+    text-decoration: none;
+}
+
+
+.articleCard{
+    margin-top: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+.articleCard:hover{
+    background-color: var(--surface-container-color);
+}
+
+.articleImage{
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.articleImage img{
+    border-radius: 8px;
+}
+
+.articleDescription{
+    flex: auto;
+    width: fit-content;
+    margin-left: 16px;
+    padding-left: 6px;
+    padding-right: 6px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+
+.articleDescription > h3{
+    display: inline-block;
+}
+
+.articleDescription > div > a {
+    margin-bottom: 8px;
+    color: grey;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+}
+
+.Link:link > div > div > h3{
+    color: var(--primary-accent-color);
+}
+.Link:visited > div > div > h3{
+    color: var(--primary-container-color);
+}

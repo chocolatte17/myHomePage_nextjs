@@ -5,16 +5,12 @@
         max-height: 223px;
     }
     .bloglist{
-        padding-left: 8%;
+        padding-left: calc(100% - 1160px - 3%);
     }
 }
 
-/*幅が870px以上1160px未満*/
-@media (min-width: 870px) and (max-width: 1160px){
-    .articleCard{
-        width: 700px;
-        max-height: 240px;
-    }
+/*幅が900px以上1160px未満*/
+@media (min-width: 900px) and (max-width: 1160px){
     .bloglist{
         padding-left: 0;
         padding-right: 0;
@@ -23,8 +19,8 @@
     }
 }
 
-/*幅が870px未満*/
-@media (max-width: 870px){
+/*幅が900px未満*/
+@media (max-width: 900px){
     .bloglist{
         padding-left: 0;
         padding-right: 0;
@@ -49,20 +45,20 @@
 /* TODO: 画面幅が狭いときに親divの範囲を飛び出してしまう */
 .articleCard{
     margin-top: 16px;
-    border-radius: 8px;
+    border-radius: 16px;
     display: flex;
     flex-direction: row;
     margin-bottom: 16px;
-    padding: 16px;
+    padding: 24px;
 }
 .articleCard:hover{
     background-color: var(--surface-container-color);
 }
 
 .articleImage{
-    border-radius: 8px;
     margin: 0;
     padding: 0;
+    height: 180px; /*なぜか、子Imgの下に5pxの空白ができてしまうので、height180pxでこちらも子Imgと同じサイズとした。*/
 }
 
 .articleImage img{

@@ -46,14 +46,14 @@
     color: var(--primary-accent-color);
 }
 
-/*幅が960px以上1160px未満*/
-@media (min-width: 870px) and (max-width: 1160px){
+/*幅が900px以上1160px未満*/
+@media (min-width: 900px) and (max-width: 1160px){
     .universal_layout > div{
         padding-left: 16px;
         padding-right: 16px;
     }
 }
-@media (max-width: 870px){
+@media (max-width: 900px){
     .universal_layout > div{
         padding-left: 16px;
         padding-right: 16px;

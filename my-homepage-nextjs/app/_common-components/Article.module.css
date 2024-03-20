@@ -7,6 +7,7 @@
 	margin-left: auto;
 	padding: 24px;
     padding-left: 32px;
+    padding-bottom: 64px;
 	border-radius: 16px;
 	background-color: var(--surface-color);
 	font-weight: 400;

@@ -5,7 +5,14 @@ import type {
  MicroCMSQueries,
  MicroCMSImage,
  MicroCMSDate,
+ MicroCMSContentId,
 } from "microcms-js-sdk";
+
+//カテゴリタグの型定義
+export type tag = {
+    id: string,
+    name: string,
+} & MicroCMSDate;
 
 //ブログの型定義
 export type Blog = {
@@ -14,6 +21,7 @@ export type Blog = {
     content: string;
     eyecatch?: MicroCMSImage;
     author: string;
+    tags: Array<tag>;
 } & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {

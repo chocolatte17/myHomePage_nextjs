@@ -1,23 +1,35 @@
 /*幅が1160px以上の場合*/
 @media (min-width: 1160px) {
     .articleCard{
-        width: 820px;
+        width: 800px;
         max-height: 223px;
     }
-
+    .bloglist{
+        padding-left: 8%;
+    }
 }
 
 /*幅が820px以上1160px未満*/
-@media (min-width: 820px) and (max-width: 1160px){
+@media (min-width: 960px) and (max-width: 1160px){
     .articleCard{
-        width: 740px;
+        width: 720px;
         max-height: 240px;
     }
+    .bloglist{
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+/*幅が820px未満*/
+@media (max-width: 960px){
+
 }
 
 .bloglist{
     width: fit-content;
-    padding-left: 8%;
 }
 
 .li {
@@ -29,9 +41,9 @@
     text-decoration: none;
 }
 
-
+/* TODO: 画面幅が狭いときに親divの範囲を飛び出してしまう */
 .articleCard{
-    margin-top: 32px;
+    margin-top: 16px;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -67,6 +79,11 @@
 
 .articleDescription > h3{
     display: inline-block;
+}
+
+.articleDescription > div{
+    display: flex;
+    flex-direction: column;
 }
 
 .articleDescription > div > a {

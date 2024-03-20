@@ -62,15 +62,15 @@ function ArticleCardComponent({post}: {post:Blog}){
                         <Image
                             src={post.eyecatch?.url ? post.eyecatch.url : "https://images.microcms-assets.io/assets/0fb09432235148a6a6e314a715192c94/0468ade415744b5897980fe9cbf2deff/test_noimage-760x460.png"} 
                             alt="アイキャッチ画像"
-                            width={400}
-                            height={200}
+                            width={320}
+                            height={180}
                         />
                     </div>
                     <div className={blogstyles.articleDescription}>
                         <h3>{post.title}</h3>
                         <div>
                             <a><IcRoundEdit/> {post.author}　<TagComponent tags={post.tags}/></a>
-                            <a>公開日時: {publishedAt}　更新日時: {revisedAt}</a>
+                            <a>公開日: {publishedAt}　更新日: {revisedAt}</a>
                         </div>
                     </div>
                 </div>
@@ -89,14 +89,14 @@ export default async function StaticPage() {
  return (
     <div className={styles.article}>
         <div className={styles.universal_layout}>
-        <h1>Blog</h1>
-        <div>
-        <ul className={blogstyles.bloglist}>
-            {contents.map((post) => {   
-                return <ArticleCardComponent post={post}/>                
-            })}
-        </ul>
-        </div>
+            <h1>Blog</h1>
+            <div>
+                <ul className={blogstyles.bloglist}>
+                {contents.map((post) => {   
+                    return <ArticleCardComponent post={post}/>                
+                })}
+                </ul>
+            </div>
         </div>
     </div>
  );

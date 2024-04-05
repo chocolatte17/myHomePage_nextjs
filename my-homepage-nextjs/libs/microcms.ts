@@ -7,22 +7,8 @@ import type {
  MicroCMSDate,
  MicroCMSContentId,
 } from "microcms-js-sdk";
+import {Blog, Tag} from "./microcms_types";
 
-//カテゴリタグの型定義
-export type tag = {
-    id: string,
-    name: string,
-} & MicroCMSDate;
-
-//ブログの型定義
-export type Blog = {
-    id: string;
-    title: string;
-    content: string;
-    eyecatch?: MicroCMSImage;
-    author: string;
-    tags: Array<tag>;
-} & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -59,4 +45,13 @@ export const getDetail = async (
  });
 
  return detailData;
+};
+
+// タグ一覧を取得
+export const getTagList = async (queries?: MicroCMSQueries) => {
+    const tagListData = await client.getList<Tag>({
+        endpoint: "categories",
+        queries,
+    });
+    return tagListData.contents;
 };

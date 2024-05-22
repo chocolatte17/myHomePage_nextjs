@@ -119,10 +119,10 @@ function ArticleCardComponent({post, selectedTags}: {post:Blog, selectedTags:Str
                     <div className={blogstyles.articleCard}>
                         <div className={blogstyles.articleImage}>
                             <Image
-                                src={post.eyecatch?.url ? post.eyecatch.url : "https://images.microcms-assets.io/assets/0fb09432235148a6a6e314a715192c94/0468ade415744b5897980fe9cbf2deff/test_noimage-760x460.png"} //アイキャッチ画像がなければNOImageの画像が代わりに出る。
+                                src={post.eyecatch?.url ? post.eyecatch.url : "https://images.microcms-assets.io/assets/0fb09432235148a6a6e314a715192c94/1cfbd0142df24cf7b39875f0e157c18e/NoImage_shoshinsha-design.com.png"} //アイキャッチ画像がなければNOImageの画像が代わりに出る。
                                 alt="アイキャッチ画像"
                                 width={320}
-                                height={180}
+                                height={168}
                             />
                         </div>
                         <div className={blogstyles.articleDescription}>

@@ -1,29 +1,28 @@
+import { client, getList, getTagList} from "../../libs/microcms";
 
-import Link from "next/link";
-import { getList } from "../../libs/microcms";
+import styles from "../_common-components/Article.module.css";
+import Bloglist from "./bloglist";
+
+
+
 
 export default async function StaticPage() {
  const { contents } = await getList();
-
- // ページの生成された時間を取得
- const time = new Date().toLocaleString();
+ const tags = await getTagList();
 
  if (!contents || contents.length === 0) {
   return <h1>No contents</h1>;
  }
 
  return (
-  <div>
-   <h1>{time}</h1>
-   <ul>
-    {contents.map((post) => {
-     return (
-      <li key={post.id}>
-       <Link href={`/blog/${post.id}`}>{post.title}</Link>
-      </li>
-     );
-    })}
-   </ul>
-  </div>
+    <div className={styles.article}>
+        <div className={styles.universal_layout}>
+            <h1>Blog</h1>
+            <div>
+                <Bloglist contents={contents} tags={tags}></Bloglist>
+                
+            </div>
+        </div>
+    </div>
  );
 }

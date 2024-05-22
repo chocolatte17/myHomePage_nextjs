@@ -7,6 +7,7 @@
 	margin-left: auto;
 	padding: 24px;
     padding-left: 32px;
+    padding-bottom: 64px;
 	border-radius: 16px;
 	background-color: var(--surface-color);
 	font-weight: 400;
@@ -20,7 +21,7 @@
 .universal_layout > h1 {
     position: relative;
     display: inline-block;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     color: var(--primary-accent-color);
     margin-top: 16px;
 }
@@ -43,4 +44,26 @@
     padding-left: 32px;
     text-align: left;
     color: var(--primary-accent-color);
+}
+
+/*幅が900px以上1160px未満*/
+@media (min-width: 900px) and (max-width: 1160px){
+    .universal_layout > div{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+@media (max-width: 900px){
+    .universal_layout > div{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.blog_layout{
+    padding-left: 0px;
+}
+
+.blog_layout > ul {
+    margin-left: 0px;
 }

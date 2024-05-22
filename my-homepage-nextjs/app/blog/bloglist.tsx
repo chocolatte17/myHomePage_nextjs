@@ -14,9 +14,9 @@ import {SVGProps} from "react";
 
 export default function BlogList({contents, tags}: {contents:Blog[], tags: Tag[]}){
 
-    // タグ選択state
+    // 選択されているタグ
     const ALLARTICLE: string = "全ての記事" 
-    const [selectedTags, setSelectedTags] = useState<String[]>([]);
+    const [selectedTags, setSelectedTags] = useState<String[]>(tags.map(tag => tag.name));
 
     function selectedTagsHandler ({tagname}: {tagname:string}) {
         if(selectedTags.includes(tagname)){
@@ -27,7 +27,8 @@ export default function BlogList({contents, tags}: {contents:Blog[], tags: Tag[]
         console.log(...selectedTags);
     }
 
-
+    // ここがBlogListの本体
+    // return <Articl..nent key={index}>は良くないらしい。こっちは本当にダメそうだから後でなんとかしておく
     return (
         <>
         {tags.map((tag) => {
@@ -39,8 +40,8 @@ export default function BlogList({contents, tags}: {contents:Blog[], tags: Tag[]
         })}
 
         <ul className={blogstyles.bloglist}>
-                {contents.map((post) => {   
-                    return <ArticleCardComponent post={post}/>                
+                {contents.map((post, index) => {   
+                    return <ArticleCardComponent key={index} post={post} selectedTags={selectedTags}/>                
                 })}
         </ul>
         </>
@@ -79,6 +80,7 @@ function MaterialSymbolsCategory(props: SVGProps<SVGSVGElement>) {
 
 
 //記事カード内タグ表示のコンポーネント
+// <a key={index}はホントはよろしくないらしいので後でなんとかしておく　<- でも、タグが動的に変わることはないからいいんじゃないのとも思う
 function TagComponent({tags = []}: {tags?:Array<Tag>}){
     if(tags.length == 0){
         return <></>;
@@ -88,7 +90,7 @@ function TagComponent({tags = []}: {tags?:Array<Tag>}){
                 <MaterialSymbolsCategory />
                 {tags.map((tag, index) => {
                     return (
-                        <a>
+                        <a key={index}>
                             {tag.name}
                             {(() => {
                               if (index != tags.length-1) {
@@ -104,32 +106,38 @@ function TagComponent({tags = []}: {tags?:Array<Tag>}){
 }
 
 //記事カードのコンポーネント
-function ArticleCardComponent({post}: {post:Blog}){
+function ArticleCardComponent({post, selectedTags}: {post:Blog, selectedTags:String[]}){
     const revisedAt = post.revisedAt?.split('T')[0];
     const publishedAt = post.publishedAt?.split('T')[0];
 
-    // TODO: Linkタグの中にdivが入っており、エラーが発生しているが、機能はするので一応放置。
-    return (
-        <li key={post.id} className={blogstyles.li}>
-            <Link href={`/blog/${post.id}`} className={blogstyles.Link}>
-                <div className={blogstyles.articleCard}>
-                    <div className={blogstyles.articleImage}>
-                        <Image
-                            src={post.eyecatch?.url ? post.eyecatch.url : "https://images.microcms-assets.io/assets/0fb09432235148a6a6e314a715192c94/0468ade415744b5897980fe9cbf2deff/test_noimage-760x460.png"} 
-                            alt="アイキャッチ画像"
-                            width={320}
-                            height={180}
-                        />
-                    </div>
-                    <div className={blogstyles.articleDescription}>
-                        <h3>{post.title}</h3>
-                        <div>
-                            <a><IcRoundEdit/> {post.author}　<TagComponent tags={post.tags}/></a>
-                            <a>公開日: {publishedAt}　更新日: {revisedAt}</a>
+
+    // TODO: Linkタグの中にdivが入っており、不正なHTMLによると思われるHydrationエラーが発生しているが、機能はするので一応放置。「いつか」直そう
+    if(post.tags.some((val) => selectedTags.includes(val.name)) || post.tags.length == 0){
+        return (
+            <li key={post.id} className={blogstyles.li}>
+                <Link href={`/blog/${post.id}`} className={blogstyles.Link}>
+                    <div className={blogstyles.articleCard}>
+                        <div className={blogstyles.articleImage}>
+                            <Image
+                                src={post.eyecatch?.url ? post.eyecatch.url : "https://images.microcms-assets.io/assets/0fb09432235148a6a6e314a715192c94/0468ade415744b5897980fe9cbf2deff/test_noimage-760x460.png"} //アイキャッチ画像がなければNOImageの画像が代わりに出る。
+                                alt="アイキャッチ画像"
+                                width={320}
+                                height={180}
+                            />
+                        </div>
+                        <div className={blogstyles.articleDescription}>
+                            <h3>{post.title}</h3>
+                            <div>
+                                <a><IcRoundEdit/> {post.author}　<TagComponent tags={post.tags}/></a>
+                                <a>公開日: {publishedAt}　更新日: {revisedAt}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Link>
-        </li>
-    );
+                </Link>
+            </li>
+        );
+    }else{
+        return (<></>);
+    }
+    
 }

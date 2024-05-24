@@ -1,45 +1,37 @@
 // static/[postId]/page.tsx
 
 import { notFound } from "next/navigation";
-import parse from "html-react-parser";
+import parse, { HTMLReactParserOptions, Element } from "html-react-parser";
 import { getDetail, getList } from "../../../libs/microcms";
+import { BlogLayout, UniversalLayout } from "../../template";
 
 export async function generateStaticParams() {
- //console.log("generateStaticParams: 記事一覧取得中...");
- const { contents } = await getList();
- //console.log("記事一覧取得完了(記事Id): ");
+  const { contents } = await getList();
+  const paths = contents.map((post) => {
+    return {
+      postId: post.id,
+    };
+  });
 
- const paths = contents.map((post) => {
- //console.log(post.id); 
- return {
-   postId: post.id,
-  };
- });
-
- return [...paths];
+  return [...paths];
 }
 
-export default async function StaticDetailPage({
- params: { postId },
-}: {
- params: { postId: string };
-}) {
- //console.log("StaticDetailPage: 記事ページ生成中...");
- const post = await getDetail(postId);
- //console.log("生成完了: "+post.title);
+export default async function StaticDetailPage({params: { postId },}: {params: { postId: string };}) {
+  const post = await getDetail(postId);
 
- // ページの生成された時間を取得
- const time = new Date().toLocaleString();
 
- if (!post) {
-  notFound();
- }
+  if (!post) {
+    notFound();
+  }
 
- return (
-  <div>
-   <h1>{post.title}</h1>
-   <h2>{time}</h2>
-   <div>{parse(post.content)}</div>
-  </div>
- );
+
+  const htmlParseOptions: HTMLReactParserOptions = {
+
+  }
+
+
+  return (
+    <BlogLayout title={post.title} blogSummary={post} children={parse(post.content)}></BlogLayout>
+    
+  );
 }

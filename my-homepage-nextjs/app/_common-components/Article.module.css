@@ -12,6 +12,12 @@
 	background-color: var(--surface-color);
 	font-weight: 400;
 }
+@media (min-width: 1160px){
+    .article{
+        width: 60vw; /*仮の値*/
+    }
+}
+
 
 /*about, contact等のユニバーサルに使えるレイアウトの差分*/
 .universal_layout{
@@ -60,10 +66,36 @@
     }
 }
 
+/*----------------------------------------------------------*/
+
+
 .blog_layout{
     padding-left: 0px;
+
+    .body{
+        margin-top:64px;
+    }
 }
 
 .blog_layout > ul {
     margin-left: 0px;
 }
+
+@media (min-width: 1160px){
+    .blog_layout{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.SupplementaryInfoWidget{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: var(--primary-accent-color);
+
+    .item {
+        color: var(--primary-accent-color);
+    }
+}
+

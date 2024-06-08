@@ -1,0 +1,5 @@
+00278, 00261, 00245, 00240, 00229, 00218, 00212, 00102, 00056:
+	生成AI: StableDiffusion1.5
+	Model : Liberte.Redmond- Generalist Model(https://civitai.com/models/94123?modelVersionId=100409)
+	LoRA  : Logo.Redmond 1.5V - Logo Lora for LiberteRedmond SD 1.5(https://civitai.com/models/206288/logoredmond-15v-logo-lora-for-liberteredmond-sd-15)
+	2024.06.08, chcolatte 

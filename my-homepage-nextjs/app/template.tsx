@@ -29,7 +29,7 @@ export function BlogLayout({title, auther, lastUpdated, blogSummary, children}: 
 		<>
 			<div className={styles.article}>
 				<div className={styles.blog_layout}>
-					<h1>{title}</h1>
+					<h1 className={styles.title}>{title}</h1>
 					<SupplementaryInfoWidget />
 					<div className={styles.body}>{children}</div>
 				</div>

@@ -74,13 +74,13 @@
     color: var(--primary-accent-color);
 
     
-    .title{
+    > .title{
     /*参考: https://jajaaan.co.jp/css/css-headline/*/
         position: relative;
         padding: 1.5rem 1rem;
         
     }
-    .title:after{
+    > .title:after{
         position: absolute;
         bottom: 0;
         left: 0;
@@ -94,12 +94,12 @@
         backface-visibility: hidden;
     }
 
-    .body{
+    > .body{
         margin-top:64px;
+        
     }
-
-
 }
+
 
 @media (min-width: 1160px){
     .blog_layout{

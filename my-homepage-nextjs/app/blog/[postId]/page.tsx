@@ -1,10 +1,12 @@
 // static/[postId]/page.tsx
 
 import { notFound } from "next/navigation";
-import parse, { HTMLReactParserOptions, Element } from "html-react-parser";
+import parse, { HTMLReactParserOptions, Element, Text, domToReact } from "html-react-parser";
 import { getDetail, getList } from "../../../libs/microcms";
-import { BlogLayout, UniversalLayout } from "../../template";
+import { BlogLayout } from "../../template";
 import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
 
 export async function generateStaticParams() {
   const { contents } = await getList();
@@ -20,16 +22,21 @@ export async function generateStaticParams() {
 export default async function StaticDetailPage({params: { postId },}: {params: { postId: string };}) {
   const post = await getDetail(postId);
 
+  const isElement = (element: unknown): element is Element => element instanceof Element;
+  const isText = (text: unknown): text is Text => text instanceof Text;
+
   if (!post) {
     notFound();
   }
 
-
   const htmlParseOptions: HTMLReactParserOptions = {
     replace(node) {
       if(!(node instanceof Element)) return;
-      if(node.name === "img"){
-        const { attribs } = node;
+      
+      const { attribs } = node;
+
+      // 画像
+      if(node.name === "img") {
         let width: number = Number(attribs.width);
         let height: number = Number(attribs.height);
 
@@ -51,6 +58,14 @@ export default async function StaticDetailPage({params: { postId },}: {params: {
             
           </>
         );
+      }
+
+      // リンク
+      if(node.name === "a" && attribs.href) {
+        const children = node.children.filter(
+          (_node): _node is Element | Text => isElement(_node) || isText(_node)
+        );
+        return <Link href={attribs.href} className={styles.link}>{domToReact(children, htmlParseOptions)}</Link>;
       }
     },
   };

@@ -1,0 +1,14 @@
+
+.link {
+    color: var(--primary-accent-color);
+    font-weight: bold;
+    /*
+    > u{
+        text-decoration: none;
+    }*/
+}
+
+/*パースしたらaタグの中にuタグとかいうのが入ってるせいで下線が上側きされてたのを、更に上書きしたのに（開発者ツールでも上書きされてるのに!）なぜか下線が表示される謎*/
+.link > u{
+    text-decoration: none;
+}

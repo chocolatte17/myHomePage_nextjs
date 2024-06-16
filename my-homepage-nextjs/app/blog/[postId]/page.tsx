@@ -30,8 +30,8 @@ export default async function StaticDetailPage({params: { postId },}: {params: {
   }
 
 
-  return (
-    <BlogLayout title={post.title} blogSummary={post} children={parse(post.content)}></BlogLayout>
+  return(
+    <BlogLayout title={post.title} blogSummary={post}>{parse(post.content)}</BlogLayout>
     
   );
 }
